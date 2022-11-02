@@ -1,0 +1,110 @@
+{
+  "name": "kubegems-dashboard",
+  "version": "1.22.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "scripts": {
+    "serve": "cross-env VUE_APP_RELEASE=local vue-cli-service serve",
+    "build": "cross-env VUE_APP_RELEASE=1.21.4 vue-cli-service build ",
+    "lint": "vue-cli-service lint",
+    "prepare": "husky install",
+    "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG -o CHANGELOGS/CHANGELOG -s -r 0",
+    "cz": "git add . && git cz",
+    "amend": "git add . && git commit --amend"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/vue-cli-plugin-commitlint/lib/cz"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,vue}": [
+      "vue-cli-service lint --fix",
+      "git add"
+    ],
+    "**/*.{html,vue,css,sass,scss}": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "ajv": "^8.6.3",
+    "apexcharts": "^3.35.3",
+    "axios": "^0.27.2",
+    "core-js": "^3.6.5",
+    "element-ui": "^2.15.10",
+    "fast-json-patch": "^3.1.1",
+    "github-markdown-css": "^5.1.0",
+    "highlight.js": "^11.5.1",
+    "js-base64": "^3.6.0",
+    "js-yaml": "4.0.0",
+    "lodash": "^4.17.21",
+    "markdown-it": "^12.0.6",
+    "moment": "^2.29.4",
+    "v-code-diff": "^0.3.11",
+    "vue": "^2.7.8",
+    "vue-apexcharts": "^1.6.2",
+    "vue-clipboard2": "^0.3.3",
+    "vue-form-wizard": "0.8.4",
+    "vue-i18n": "^8.27.2",
+    "vue-meta": "^2.4.0",
+    "vue-okr-tree": "1.0.10",
+    "vue-router": "^3.4.4",
+    "vue-slider-component": "^3.2.14",
+    "vue-table-dynamic": "^0.4.10",
+    "vue2-ace-editor": "^0.0.15",
+    "vuedraggable": "^2.24.3",
+    "vuetify": "^2.6.9",
+    "vuex": "^3.6.2",
+    "xterm": "^4.19.0",
+    "xterm-addon-fit": "^0.5.0"
+  },
+  "devDependencies": {
+    "@iconify-json/logos": "^1.1.13",
+    "@iconify-json/mdi": "^1.1.29",
+    "@iconify/vue2": "^1.2.1",
+    "@mdx-js/vue-loader": "^1.6.22",
+    "@vue/cli-plugin-babel": "^5.0.4",
+    "@vue/cli-plugin-eslint": "^5.0.4",
+    "@vue/cli-service": "^5.0.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "commitizen": "^4.2.4",
+    "commitlint": "^13.2.0",
+    "compression-webpack-plugin": "^10.0.0",
+    "conventional-changelog-cli": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-define-config": "^1.5.1",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.4.1",
+    "eslint-plugin-vuetify": "^1.1.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.6.2",
+    "right-pad": "^1.0.1",
+    "sass": "^1.26.11",
+    "sass-loader": "^12.6.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.19.0",
+    "vue-cli-plugin-commitlint": "^1.0.12",
+    "vue-cli-plugin-vuetify": "^2.0.7",
+    "vue-cli-plugin-yaml": "^1.0.2",
+    "vue-eslint-parser": "^9.0.2",
+    "vue-template-compiler": "^2.6.12",
+    "vuetify-loader": "^1.7.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
